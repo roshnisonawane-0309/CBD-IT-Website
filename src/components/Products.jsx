@@ -53,7 +53,7 @@ export default function Products() {
                 style={{
                   display: "inline-block",
                   background: "#0f172a",
-                  color: "#fbbf24",
+                  color: "#fef08a",
                   fontSize: "12px",
                   fontWeight: 800,
                   letterSpacing: "0.5px",
@@ -73,7 +73,7 @@ export default function Products() {
               <div className="bullet-points-list">
                 {tally.highlights.map((feat, i) => (
                   <div className="bullet-row" key={i}>
-                    <Check size={18} color="#78350f" style={{ flexShrink: 0, marginTop: "2px" }} />
+                    <Check size={18} color="#854d0e" style={{ flexShrink: 0, marginTop: "2px" }} />
                     <span>{feat}</span>
                   </div>
                 ))}

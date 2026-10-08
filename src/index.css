@@ -7,23 +7,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Rich Golden Yellow Palette (replacing black pages/sections) */
-  --gold-base: #f59e0b;
-  --gold-light: #fbbf24;
-  --gold-amber: #d97706;
-  --gold-deep: #b45309;
-  --gold-surface: #fbb016;
-  --gold-card: #f59e0b;
-  --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 55%, #d97706 100%);
-  --gold-border: rgba(120, 53, 15, 0.22);
-  --gold-border-hover: rgba(120, 53, 15, 0.38);
+  /* Elegant Vanilla Yellow Palette */
+  --vanilla-light: #fef9c3;
+  --vanilla-base: #fef08a;
+  --vanilla-butter: #fde68a;
+  --vanilla-surface: #fef9c3;
+  --vanilla-card: #fef08a;
+  --vanilla-deep: #854d0e;
+  --vanilla-accent: #ca8a04;
+  --vanilla-gradient: linear-gradient(135deg, #fef9c3 0%, #fef08a 55%, #fde68a 100%);
+  --vanilla-gradient-vertical: linear-gradient(180deg, #fef9c3 0%, #fef08a 100%);
+  --vanilla-border: rgba(161, 98, 7, 0.18);
+  --vanilla-border-hover: rgba(161, 98, 7, 0.32);
 
-  /* Legacy aliases mapped to Golden Yellow so all styles inherit seamlessly */
-  --black-base: #f59e0b;
-  --black-surface: #fbb016;
-  --black-card: #f59e0b;
-  --black-border: rgba(120, 53, 15, 0.22);
-  --black-border-hover: rgba(120, 53, 15, 0.38);
+  /* Legacy aliases mapped to Vanilla Yellow so all styles inherit seamlessly */
+  --gold-base: #fef08a;
+  --black-base: #fef08a;
+  --black-surface: #fef9c3;
+  --black-card: #fef08a;
+  --black-border: rgba(161, 98, 7, 0.18);
+  --black-border-hover: rgba(161, 98, 7, 0.32);
   
   /* Crisp Light Palette */
   --light-bg: #f8fafc;
@@ -53,7 +56,7 @@
   --container-radius: 36px;
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
   --shadow-elevated: 0 12px 36px rgba(0, 0, 0, 0.08);
-  --shadow-dark-glow: 0 20px 50px rgba(180, 83, 9, 0.22);
+  --shadow-dark-glow: 0 20px 50px rgba(161, 98, 7, 0.12);
 
   --transition: all 0.25s cubic-bezier(0.2, 0, 0.2, 1);
 }
@@ -72,7 +75,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--gold-base);
+  background-color: var(--vanilla-base);
   color: var(--text-dark);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -110,10 +113,10 @@ button {
   padding: 0 28px;
 }
 
-/* Dot Grid Background (Golden Yellow Tech Style) */
+/* Dot Grid Background (Soft Vanilla Yellow Tech Style) */
 .dot-grid-bg {
-  background-color: var(--gold-base);
-  background-image: radial-gradient(rgba(120, 53, 15, 0.22) 1.2px, transparent 1.2px);
+  background-color: var(--vanilla-base);
+  background-image: radial-gradient(rgba(161, 98, 7, 0.15) 1.2px, transparent 1.2px);
   background-size: 28px 28px;
   color: #0f172a;
 }
@@ -149,9 +152,9 @@ button {
 }
 
 .btn-pill-outline-white {
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.65);
   color: #0f172a;
-  border-color: rgba(15, 23, 42, 0.35);
+  border-color: rgba(15, 23, 42, 0.25);
   backdrop-filter: blur(8px);
 }
 
@@ -202,15 +205,15 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(245, 158, 11, 0.92);
+  background: rgba(254, 240, 138, 0.94);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(120, 53, 15, 0.2);
+  border-bottom: 1px solid rgba(161, 98, 7, 0.18);
   transition: var(--transition);
 }
 
 .navbar-wrapper.scrolled {
-  background: rgba(245, 158, 11, 0.98);
-  box-shadow: 0 8px 30px rgba(180, 83, 9, 0.25);
+  background: rgba(254, 240, 138, 0.98);
+  box-shadow: 0 8px 30px rgba(161, 98, 7, 0.12);
 }
 
 .navbar-content {
@@ -279,7 +282,7 @@ button {
   position: relative;
   padding: 70px 0 90px 0;
   overflow: hidden;
-  background-color: var(--gold-base);
+  background-color: var(--vanilla-base);
 }
 
 /* Giant Headline */
@@ -313,10 +316,10 @@ button {
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(120, 53, 15, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(161, 98, 7, 0.22);
   border-radius: var(--pill-radius);
-  color: #78350f;
+  color: #854d0e;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -334,7 +337,7 @@ button {
 
 .hero-lead-text {
   font-size: 17px;
-  color: #1e293b;
+  color: #334155;
   line-height: 1.7;
   margin-bottom: 36px;
   max-width: 600px;
@@ -362,9 +365,9 @@ button {
 }
 
 .hero-cta-group .btn-pill-outline-white {
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.65);
   color: #0f172a;
-  border-color: rgba(15, 23, 42, 0.35);
+  border-color: rgba(15, 23, 42, 0.25);
 }
 
 .hero-cta-group .btn-pill-outline-white:hover {
@@ -379,7 +382,7 @@ button {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   padding-top: 36px;
-  border-top: 1px solid rgba(120, 53, 15, 0.22);
+  border-top: 1px solid rgba(161, 98, 7, 0.2);
 }
 
 .stat-metric {
@@ -393,7 +396,7 @@ button {
 
 .stat-label-text {
   font-size: 13px;
-  color: #78350f;
+  color: #854d0e;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   font-weight: 700;
@@ -404,8 +407,8 @@ button {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(120, 53, 15, 0.25);
-  box-shadow: 0 30px 60px rgba(120, 53, 15, 0.22);
+  border: 1px solid rgba(161, 98, 7, 0.22);
+  box-shadow: 0 30px 60px rgba(161, 98, 7, 0.12);
 }
 
 .hero-office-img {
@@ -575,10 +578,10 @@ button {
 }
 
 /* ========================================================
-   PRODUCTS SECTION (Golden Yellow Spotlight & Card Grid)
+   PRODUCTS SECTION (Vanilla Yellow Spotlight & Card Grid)
    ======================================================== */
 .spotlight-card-modern {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 60%, #d97706 100%);
+  background: linear-gradient(135deg, #fef9c3 0%, #fef08a 55%, #fde68a 100%);
   color: #0f172a;
   border-radius: 30px;
   padding: 56px;
@@ -587,8 +590,8 @@ button {
   gap: 48px;
   align-items: center;
   margin-bottom: 50px;
-  border: 1px solid rgba(120, 53, 15, 0.25);
-  box-shadow: 0 20px 50px rgba(180, 83, 9, 0.22);
+  border: 1px solid rgba(161, 98, 7, 0.22);
+  box-shadow: 0 20px 50px rgba(161, 98, 7, 0.12);
 }
 
 .spotlight-left h3 {
@@ -599,14 +602,14 @@ button {
 
 .spotlight-tagline-text {
   font-size: 16px;
-  color: #78350f;
+  color: #854d0e;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 .spotlight-left p {
   font-size: 16px;
-  color: #1e293b;
+  color: #334155;
   line-height: 1.7;
   margin-bottom: 28px;
 }
@@ -646,9 +649,9 @@ button {
 }
 
 .spotlight-button-row .btn-pill-outline-white {
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.65);
   color: #0f172a;
-  border-color: rgba(15, 23, 42, 0.35);
+  border-color: rgba(15, 23, 42, 0.25);
 }
 
 .spotlight-button-row .btn-pill-outline-white:hover {
@@ -658,8 +661,8 @@ button {
 }
 
 .spotlight-right-display {
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(120, 53, 15, 0.22);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(161, 98, 7, 0.2);
   border-radius: 24px;
   padding: 36px;
   text-align: center;
@@ -673,7 +676,7 @@ button {
 
 .spotlight-right-display span {
   font-size: 13px;
-  color: #78350f;
+  color: #854d0e;
   display: block;
   font-weight: 700;
   margin-bottom: 24px;
@@ -686,8 +689,8 @@ button {
 }
 
 .spec-pill-box {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(120, 53, 15, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(161, 98, 7, 0.18);
   padding: 10px 8px;
   border-radius: 10px;
   font-size: 13px;
@@ -1142,13 +1145,13 @@ button {
 }
 
 /* ========================================================
-   FOOTER (Rich Golden Yellow Finish)
+   FOOTER (Creamy Vanilla Yellow Finish)
    ======================================================== */
 .footer-dark-wrapper {
-  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+  background: linear-gradient(180deg, #fef9c3 0%, #fef08a 100%);
   color: #1e293b;
   padding: 80px 0 36px 0;
-  border-top: 1px solid rgba(120, 53, 15, 0.25);
+  border-top: 1px solid rgba(161, 98, 7, 0.2);
   position: relative;
   z-index: 10;
 }
@@ -1163,7 +1166,7 @@ button {
 .footer-brand-column p {
   font-size: 14.5px;
   line-height: 1.7;
-  color: #1e293b;
+  color: #334155;
   margin: 20px 0 24px 0;
 }
 
@@ -1176,8 +1179,8 @@ button {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(120, 53, 15, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(161, 98, 7, 0.2);
   color: #0f172a;
   display: flex;
   align-items: center;
@@ -1187,7 +1190,7 @@ button {
 
 .social-pill-btn:hover {
   background: #0f172a;
-  color: #ffffff;
+  color: #fef08a;
   transform: translateY(-2px);
 }
 
@@ -1208,7 +1211,7 @@ button {
 
 .footer-link-stack a {
   font-size: 14px;
-  color: #1e293b;
+  color: #334155;
   font-weight: 500;
 }
 
@@ -1219,13 +1222,13 @@ button {
 }
 
 .footer-bottom-row {
-  border-top: 1px solid rgba(120, 53, 15, 0.25);
+  border-top: 1px solid rgba(161, 98, 7, 0.2);
   padding-top: 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 13.5px;
-  color: rgba(15, 23, 42, 0.75);
+  color: #475569;
   flex-wrap: wrap;
   gap: 12px;
 }

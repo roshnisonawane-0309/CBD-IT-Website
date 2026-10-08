@@ -76,7 +76,7 @@ export default function Hero() {
               />
               <div className="hero-floating-pill">
                 <div className="floating-pill-left">
-                  <ShieldCheck size={20} color="#38bdf8" />
+                  <ShieldCheck size={20} color="#fef08a" />
                   <span>TallyPrime 5.1 Certified Support</span>
                 </div>
                 <div style={{ display: "flex", gap: "6px" }}>
