@@ -111,7 +111,7 @@ export default function Footer() {
                   href={companyData.externalLinks.shop}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: "#60a5fa" }}
+                  style={{ color: "#0f172a", fontWeight: 700 }}
                 >
                   Online Shop ↗
                 </a>
@@ -131,13 +131,13 @@ export default function Footer() {
           {/* Contact Details */}
           <div className="footer-col-nav">
             <h4>Head Office</h4>
-            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", marginBottom: "14px", lineHeight: "1.6" }}>
+            <p style={{ fontSize: "14px", color: "#1e293b", marginBottom: "14px", lineHeight: "1.6" }}>
               810, B Wing, Punit Tower 2, Sector 11, CBD Belapur, Navi Mumbai, Maharashtra
             </p>
-            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", marginBottom: "8px" }}>
+            <p style={{ fontSize: "14px", color: "#0f172a", marginBottom: "8px" }}>
               <strong>Phone:</strong> {companyData.contacts.primaryPhone}
             </p>
-            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", marginBottom: "20px" }}>
+            <p style={{ fontSize: "14px", color: "#0f172a", marginBottom: "20px" }}>
               <strong>Email:</strong> {companyData.contacts.primaryEmail}
             </p>
 

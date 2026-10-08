@@ -52,14 +52,16 @@ export default function Products() {
               <span
                 style={{
                   display: "inline-block",
-                  background: "var(--accent-blue)",
-                  color: "#fff",
+                  background: "#0f172a",
+                  color: "#fbbf24",
                   fontSize: "12px",
-                  fontWeight: 700,
+                  fontWeight: 800,
+                  letterSpacing: "0.5px",
                   textTransform: "uppercase",
-                  padding: "4px 12px",
+                  padding: "5px 14px",
                   borderRadius: "var(--pill-radius)",
                   marginBottom: "16px",
+                  boxShadow: "0 2px 8px rgba(15, 23, 42, 0.15)",
                 }}
               >
                 ★ Featured Software
@@ -71,7 +73,7 @@ export default function Products() {
               <div className="bullet-points-list">
                 {tally.highlights.map((feat, i) => (
                   <div className="bullet-row" key={i}>
-                    <Check size={18} color="#38bdf8" style={{ flexShrink: 0, marginTop: "2px" }} />
+                    <Check size={18} color="#78350f" style={{ flexShrink: 0, marginTop: "2px" }} />
                     <span>{feat}</span>
                   </div>
                 ))}

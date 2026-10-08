@@ -46,7 +46,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="nav-link-item"
-              style={{ fontSize: "14px", color: "rgba(255,255,255,0.75)" }}
+              style={{ fontSize: "14px", color: "#1e293b", fontWeight: 600 }}
             >
               Shop ↗
             </a>
@@ -67,13 +67,13 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Drawer (Sleek Dark Theme) */}
+      {/* Mobile Drawer (Golden Yellow Theme) */}
       {mobileOpen && (
         <div
           style={{
             position: "fixed",
             inset: 0,
-            background: "rgba(7, 10, 17, 0.8)",
+            background: "rgba(120, 53, 15, 0.45)",
             backdropFilter: "blur(8px)",
             zIndex: 1200,
           }}
@@ -87,8 +87,8 @@ export default function Navbar() {
               bottom: 0,
               width: "320px",
               maxWidth: "85vw",
-              background: "var(--black-surface)",
-              borderLeft: "1px solid var(--black-border)",
+              background: "var(--gold-surface)",
+              borderLeft: "1px solid var(--gold-border)",
               padding: "28px",
               display: "flex",
               flexDirection: "column",
@@ -102,25 +102,25 @@ export default function Navbar() {
                 alignItems: "center",
                 justifyContent: "space-between",
                 paddingBottom: "20px",
-                borderBottom: "1px solid var(--black-border)",
+                borderBottom: "1px solid var(--gold-border)",
                 marginBottom: "24px",
               }}
             >
               <div className="logo-pill-badge" style={{ padding: "5px 14px" }}>
                 <img src="/logo.png" alt="CBD IT Solutions" style={{ height: "42px", width: "auto" }} />
               </div>
-              <button onClick={closeMenu} style={{ color: "#ffffff" }} aria-label="Close">
+              <button onClick={closeMenu} style={{ color: "#0f172a" }} aria-label="Close">
                 <X size={24} />
               </button>
             </div>
 
             <nav style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              <a href="#home" onClick={closeMenu} style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>Home</a>
-              <a href="#about" onClick={closeMenu} style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>About Us</a>
-              <a href="#products" onClick={closeMenu} style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>Products & Services</a>
-              <a href="#education" onClick={closeMenu} style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>Tally Education</a>
-              <a href="#locations" onClick={closeMenu} style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>Branch Locations</a>
-              <a href="#contact" onClick={closeMenu} style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>Contact Us</a>
+              <a href="#home" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Home</a>
+              <a href="#about" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>About Us</a>
+              <a href="#products" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Products & Services</a>
+              <a href="#education" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Tally Education</a>
+              <a href="#locations" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Branch Locations</a>
+              <a href="#contact" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Contact Us</a>
             </nav>
 
             <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "12px" }}>
