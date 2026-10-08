@@ -67,13 +67,13 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Drawer (Golden Yellow Theme) */}
+      {/* Mobile Drawer (Vanilla Yellow Theme) */}
       {mobileOpen && (
         <div
           style={{
             position: "fixed",
             inset: 0,
-            background: "rgba(120, 53, 15, 0.45)",
+            background: "rgba(161, 98, 7, 0.25)",
             backdropFilter: "blur(8px)",
             zIndex: 1200,
           }}
@@ -87,8 +87,8 @@ export default function Navbar() {
               bottom: 0,
               width: "320px",
               maxWidth: "85vw",
-              background: "var(--gold-surface)",
-              borderLeft: "1px solid var(--gold-border)",
+              background: "var(--vanilla-surface)",
+              borderLeft: "1px solid var(--vanilla-border)",
               padding: "28px",
               display: "flex",
               flexDirection: "column",
@@ -102,7 +102,7 @@ export default function Navbar() {
                 alignItems: "center",
                 justifyContent: "space-between",
                 paddingBottom: "20px",
-                borderBottom: "1px solid var(--gold-border)",
+                borderBottom: "1px solid var(--vanilla-border)",
                 marginBottom: "24px",
               }}
             >
