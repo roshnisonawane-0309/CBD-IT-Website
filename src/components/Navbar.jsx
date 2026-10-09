@@ -79,7 +79,7 @@ export default function Navbar({ onOpenSupportModal }) {
           {/* Navigation Menu */}
           <ul className="orgo-nav-menu" aria-label="Main Navigation">
             <li><a href="#home" className="orgo-nav-link active">Home</a></li>
-            <li><a href="#who-we-are" className="orgo-nav-link">About Us</a></li>
+            <li><a href="#who-we-are" className="orgo-nav-link">About</a></li>
             <li><a href="#products" className="orgo-nav-link">Services</a></li>
             <li><a href="#education" className="orgo-nav-link">Success Stories</a></li>
             <li><a href="#locations" className="orgo-nav-link">Branches</a></li>
@@ -166,7 +166,7 @@ export default function Navbar({ onOpenSupportModal }) {
 
             <nav style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               <a href="#home" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Home</a>
-              <a href="#who-we-are" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>About Us</a>
+              <a href="#who-we-are" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>About</a>
               <a href="#products" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Services</a>
               <a href="#education" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Success Stories</a>
               <a href="#locations" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Branches</a>

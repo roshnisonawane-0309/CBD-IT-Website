@@ -89,7 +89,7 @@ export default function Footer() {
             <h5>Quick Links</h5>
             <ul>
               <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
+              <li><a href="#who-we-are">About</a></li>
               <li><a href="#journey">Products & Solutions</a></li>
               <li><a href="#driving-success">Driving Innovation</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
