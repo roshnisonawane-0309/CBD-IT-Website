@@ -1,62 +1,43 @@
 /* ========================================================
-   CBD IT SOLUTIONS - SaaS Bold & Elegant Design System
-   Inspired by Wix SaaS Templates (4260 & 4262)
-   High-Contrast Black & Crisp Light Combination
+   CBD IT SOLUTIONS - Orgocloud Design System
+   Inspired by https://www.orgocloud.co.in/
+   Clean, Corporate, ROI-Focused Digital Architecture
    ======================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Elegant Vanilla Yellow Palette */
-  --vanilla-light: #fef9c3;
-  --vanilla-base: #fef08a;
-  --vanilla-butter: #fde68a;
-  --vanilla-surface: #fef9c3;
-  --vanilla-card: #fef08a;
-  --vanilla-deep: #854d0e;
-  --vanilla-accent: #ca8a04;
-  --vanilla-gradient: linear-gradient(135deg, #fef9c3 0%, #fef08a 55%, #fde68a 100%);
-  --vanilla-gradient-vertical: linear-gradient(180deg, #fef9c3 0%, #fef08a 100%);
-  --vanilla-border: rgba(161, 98, 7, 0.18);
-  --vanilla-border-hover: rgba(161, 98, 7, 0.32);
+  /* Orgocloud Palette */
+  --orgo-blue: #2b689c;
+  --orgo-blue-hover: #21527c;
+  --orgo-blue-dark: #141e2e;
+  --orgo-blue-light: #3984c6;
+  --orgo-blue-soft: #f0f7fc;
+  --orgo-gold: #d49b00;
+  --orgo-green: #25d366;
 
-  /* Legacy aliases mapped to Vanilla Yellow so all styles inherit seamlessly */
-  --gold-base: #fef08a;
-  --black-base: #fef08a;
-  --black-surface: #fef9c3;
-  --black-card: #fef08a;
-  --black-border: rgba(161, 98, 7, 0.18);
-  --black-border-hover: rgba(161, 98, 7, 0.32);
-  
-  /* Crisp Light Palette */
-  --light-bg: #f8fafc;
-  --light-surface: #ffffff;
-  --light-border: #e2e8f0;
-  --light-border-subtle: #edf2f7;
-  --text-dark: #0f172a;
-  --text-muted: #64748b;
-  --text-light: #ffffff;
-  --text-light-muted: rgba(255, 255, 255, 0.72);
-
-  /* Vibrant Accents */
-  --accent-blue: #2563eb;
-  --accent-blue-hover: #1d4ed8;
-  --accent-blue-glow: rgba(37, 99, 235, 0.35);
-  --brand-red: #f3525a;
-  --brand-red-light: rgba(243, 82, 90, 0.12);
-  --brand-green: #10b981;
+  /* Clean Backgrounds */
+  --bg-white: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-soft-gray: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-subtle: #edf2f7;
 
   /* Typography */
+  --text-dark: #141e2e;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Elevations & Radii */
-  --pill-radius: 9999px;
-  --card-radius: 20px;
-  --container-radius: 36px;
-  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
-  --shadow-elevated: 0 12px 36px rgba(0, 0, 0, 0.08);
-  --shadow-dark-glow: 0 20px 50px rgba(161, 98, 7, 0.12);
+  /* Radii & Shadows */
+  --radius-pill: 9999px;
+  --radius-card: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(20, 30, 46, 0.05);
+  --shadow-md: 0 8px 24px rgba(20, 30, 46, 0.08);
+  --shadow-lg: 0 16px 40px rgba(20, 30, 46, 0.12);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
 
   --transition: all 0.25s cubic-bezier(0.2, 0, 0.2, 1);
 }
@@ -70,12 +51,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 110px;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--vanilla-base);
+  background-color: var(--bg-white);
   color: var(--text-dark);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -85,7 +66,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.25;
+  color: var(--text-dark);
 }
 
 a {
@@ -106,164 +88,220 @@ button {
   cursor: pointer;
 }
 
-/* Layout Utilities */
 .container {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
-/* Dot Grid Background (Soft Vanilla Yellow Tech Style) */
-.dot-grid-bg {
-  background-color: var(--vanilla-base);
-  background-image: radial-gradient(rgba(161, 98, 7, 0.15) 1.2px, transparent 1.2px);
-  background-size: 28px 28px;
-  color: #0f172a;
-}
-
-/* Pill Buttons */
-.btn-pill {
+/* Buttons (Orgocloud Style) */
+.btn-orgo-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 28px;
-  border-radius: var(--pill-radius);
-  font-family: var(--font-display);
-  font-size: 15px;
+  padding: 10px 26px;
+  border-radius: var(--radius-pill);
+  background-color: var(--orgo-blue);
+  color: #ffffff;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  font-size: 15px;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(43, 104, 156, 0.3);
+  border: 1.5px solid var(--orgo-blue);
+  cursor: pointer;
+}
+
+.btn-orgo-primary:hover {
+  background-color: var(--orgo-blue-hover);
+  border-color: var(--orgo-blue-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(43, 104, 156, 0.45);
+}
+
+.btn-orgo-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--orgo-blue);
+  border: 1.5px solid var(--orgo-blue);
+  font-weight: 600;
+  font-size: 15px;
   transition: var(--transition);
   cursor: pointer;
-  border: 1.5px solid transparent;
 }
 
-.btn-pill-primary {
-  background: var(--accent-blue);
-  color: var(--text-light);
-  box-shadow: 0 6px 20px var(--accent-blue-glow);
-}
-
-.btn-pill-primary:hover {
-  background: var(--accent-blue-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.5);
-  color: var(--text-light);
-}
-
-.btn-pill-outline-white {
-  background: rgba(255, 255, 255, 0.65);
-  color: #0f172a;
-  border-color: rgba(15, 23, 42, 0.25);
-  backdrop-filter: blur(8px);
-}
-
-.btn-pill-outline-white:hover {
-  background: #0f172a;
+.btn-orgo-outline:hover {
+  background-color: var(--orgo-blue);
   color: #ffffff;
-  border-color: #0f172a;
   transform: translateY(-2px);
 }
 
-.btn-pill-dark {
-  background: #0f172a;
-  color: #ffffff;
-}
-
-.btn-pill-dark:hover {
-  background: #1e293b;
-  transform: translateY(-2px);
-  color: #ffffff;
-}
-
-.btn-pill-outline-dark {
-  background: transparent;
-  color: var(--text-dark);
-  border-color: var(--text-dark);
-}
-
-.btn-pill-outline-dark:hover {
-  background: var(--text-dark);
-  color: var(--text-light);
-  transform: translateY(-2px);
-}
-
-.btn-pill-sm {
-  padding: 8px 20px;
-  font-size: 13.5px;
-}
-
-.btn-pill-lg {
-  padding: 16px 36px;
-  font-size: 16px;
+.btn-orgo-pill-lg {
+  padding: 14px 34px;
+  font-size: 17px;
+  border-radius: var(--radius-pill);
 }
 
 /* ========================================================
-   NAVBAR (Minimalist Floating Header)
+   TOP UTILITY BAR (Orgocloud Style)
    ======================================================== */
-.navbar-wrapper {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(254, 240, 138, 0.94);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(161, 98, 7, 0.18);
-  transition: var(--transition);
+.orgo-top-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 13.5px;
+  color: var(--text-muted);
 }
 
-.navbar-wrapper.scrolled {
-  background: rgba(254, 240, 138, 0.98);
-  box-shadow: 0 8px 30px rgba(161, 98, 7, 0.12);
-}
-
-.navbar-content {
+.orgo-top-bar-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 42px;
 }
 
-/* Original Logo Pill Badge */
-.logo-pill-badge {
-  background: #ffffff;
-  padding: 6px 18px;
-  border-radius: var(--pill-radius);
+.orgo-top-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.orgo-top-links a {
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 4px 16px rgba(120, 53, 15, 0.2);
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+.orgo-top-links a:hover {
+  color: var(--orgo-blue);
+}
+
+.orgo-top-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.orgo-top-right .partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* ========================================================
+   MAIN NAVBAR (Orgocloud Style)
+   ======================================================== */
+.orgo-navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
 
-.logo-pill-badge:hover {
-  transform: scale(1.03);
+.orgo-navbar-wrapper.scrolled {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.navbar-logo-img {
-  height: 50px;
+.orgo-navbar-content {
+  display: grid;
+  grid-template-columns: 240px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  height: 80px;
+}
+
+.orgo-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.orgo-navbar-logo-img {
+  height: 52px;
   width: auto;
   object-fit: contain;
 }
 
-.navbar-links {
+/* Search Input (Orgocloud Style Pill) */
+.orgo-search-pill {
   display: flex;
   align-items: center;
-  gap: 28px;
+  background: var(--bg-soft-gray);
+  border-radius: var(--radius-pill);
+  padding: 4px 6px 4px 16px;
+  border: 1px solid var(--border-color);
+  max-width: 280px;
 }
 
-.nav-link-item {
-  color: #1e293b;
-  font-size: 14.5px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
+.orgo-search-pill input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13.5px;
+  color: var(--text-dark);
+  width: 100%;
+}
+
+.orgo-search-pill input::placeholder {
+  color: var(--text-muted);
+}
+
+.orgo-search-btn {
+  background: var(--orgo-blue);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   transition: var(--transition);
 }
 
-.nav-link-item:hover,
-.nav-link-item.active {
-  color: #000000;
+.orgo-search-btn:hover {
+  background: var(--orgo-blue-hover);
 }
 
-.navbar-right-actions {
+.orgo-nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  list-style: none;
+}
+
+.orgo-nav-link {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-dark);
+  padding: 8px 4px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.orgo-nav-link:hover,
+.orgo-nav-link.active {
+  color: var(--orgo-blue);
+  font-weight: 600;
+}
+
+.orgo-navbar-actions {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -271,1047 +309,815 @@ button {
 
 .mobile-toggle-btn {
   display: none;
-  color: #0f172a;
+  color: var(--text-dark);
   padding: 6px;
 }
 
 /* ========================================================
-   HERO SECTION (Bold Typography & Split Layout)
+   HERO CAROUSEL (Orgocloud s_carousel)
    ======================================================== */
-.hero-wrapper {
+.orgo-hero-section {
   position: relative;
-  padding: 70px 0 90px 0;
+  background-color: var(--orgo-blue-dark);
+  background-image: url('/hero-office.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0;
   overflow: hidden;
-  background-color: var(--vanilla-base);
 }
 
-/* Giant Headline */
-.hero-giant-heading {
-  font-size: clamp(48px, 8.5vw, 110px);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-  color: #0f172a;
-  line-height: 0.98;
-  margin-bottom: 48px;
-  text-align: left;
+.orgo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 30, 46, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
-.hero-giant-heading .gradient-word {
-  background: linear-gradient(135deg, #0f172a 20%, #334155 100%);
+.orgo-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Frosted Center Content Card (Direct Match to Orgocloud bg-white-75) */
+.orgo-hero-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.4s ease;
+}
+
+.orgo-hero-card h1 {
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.orgo-hero-divider {
+  color: var(--orgo-blue);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  opacity: 0.65;
+}
+
+.orgo-hero-lead {
+  font-size: clamp(16px, 2vw, 19px);
+  color: #334155;
+  max-width: 680px;
+  margin: 0 auto 32px auto;
+  line-height: 1.65;
+}
+
+.orgo-hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Carousel Slide Switcher Tabs */
+.orgo-hero-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.orgo-hero-indicator-btn {
+  width: 44px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.4);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.orgo-hero-indicator-btn.active {
+  background: #ffffff;
+  width: 64px;
+}
+
+/* ========================================================
+   SECTION: "Who are we?" (Orgocloud s_text_image)
+   ======================================================== */
+.orgo-who-section {
+  padding: 80px 0 60px 0;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.text-gradient-blue {
+  background-image: linear-gradient(135deg, #2b689c 40%, #141e2e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
-/* Split Main Content */
-.hero-split-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: 56px;
-}
-
-.hero-tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(161, 98, 7, 0.22);
-  border-radius: var(--pill-radius);
-  color: #854d0e;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+.orgo-who-title {
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 800;
   margin-bottom: 24px;
 }
 
-.hero-subhead {
-  font-size: clamp(22px, 2.5vw, 32px);
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.35;
-  margin-bottom: 18px;
-}
-
-.hero-lead-text {
-  font-size: 17px;
+.orgo-who-body {
+  font-size: 16.5px;
   color: #334155;
-  line-height: 1.7;
-  margin-bottom: 36px;
-  max-width: 600px;
+  line-height: 1.8;
+  margin-bottom: 20px;
 }
 
-.hero-cta-group {
-  display: flex;
+.orgo-thick-separator {
+  border: none;
+  height: 3px;
+  background-color: #e9ecef;
+  margin: 32px 0 24px 0;
+}
+
+.orgo-discover-link {
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-}
-
-.hero-cta-group .btn-pill-primary {
-  background: #0f172a;
-  color: #ffffff;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.35);
-}
-
-.hero-cta-group .btn-pill-primary:hover {
-  background: #1e293b;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.5);
-  color: #ffffff;
-}
-
-.hero-cta-group .btn-pill-outline-white {
-  background: rgba(255, 255, 255, 0.65);
-  color: #0f172a;
-  border-color: rgba(15, 23, 42, 0.25);
-}
-
-.hero-cta-group .btn-pill-outline-white:hover {
-  background: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
-}
-
-/* Hero Stats Row */
-.hero-stats-band {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding-top: 36px;
-  border-top: 1px solid rgba(161, 98, 7, 0.2);
-}
-
-.stat-metric {
+  gap: 8px;
   font-family: var(--font-display);
-  font-size: 38px;
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.stat-label-text {
-  font-size: 13px;
-  color: #854d0e;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
+  font-size: 15px;
   font-weight: 700;
+  color: var(--orgo-blue);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: var(--transition);
 }
 
-/* Hero Visual Card */
-.hero-framed-visual {
-  position: relative;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(161, 98, 7, 0.22);
-  box-shadow: 0 30px 60px rgba(161, 98, 7, 0.12);
-}
-
-.hero-office-img {
-  width: 100%;
-  height: 480px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.hero-framed-visual:hover .hero-office-img {
-  transform: scale(1.03);
-}
-
-.hero-floating-pill {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  right: 24px;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--pill-radius);
-  padding: 14px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #ffffff;
-}
-
-.floating-pill-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.floating-pill-left span {
-  font-size: 14px;
-  font-weight: 600;
+.orgo-discover-link:hover {
+  color: var(--orgo-blue-hover);
+  transform: translateX(4px);
 }
 
 /* ========================================================
-   CURVED CONTOUR TRANSITION (Inspired by Wix 4262)
+   SECTION: "Your Journey Begins Here" (Orgocloud s_cards_soft)
    ======================================================== */
-.light-content-wrapper {
-  background-color: var(--light-bg);
-  border-radius: var(--container-radius) var(--container-radius) 0 0;
-  position: relative;
-  z-index: 5;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2);
-  padding-top: 40px;
+.orgo-journey-section {
+  padding: 85px 0 75px 0;
+  background-color: var(--bg-light);
 }
 
-/* Section Shells */
-.light-section {
-  padding: 90px 0;
+.orgo-section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px auto;
 }
 
-.light-section-white {
-  background-color: var(--light-surface);
-}
-
-.section-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent-blue);
-  background: rgba(37, 99, 235, 0.08);
-  padding: 6px 16px;
-  border-radius: var(--pill-radius);
-  margin-bottom: 16px;
-}
-
-.section-headline {
-  font-size: clamp(34px, 4vw, 48px);
+.orgo-section-header h2 {
+  font-size: clamp(30px, 3.8vw, 42px);
   font-weight: 800;
-  letter-spacing: -1px;
   color: var(--text-dark);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-.section-subtext {
+.orgo-section-header p {
   font-size: 17px;
   color: var(--text-muted);
-  max-width: 680px;
-  margin: 0 auto;
-  line-height: 1.7;
 }
 
-.center-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-/* ========================================================
-   ABOUT SECTION (Clean Tech Cards)
-   ======================================================== */
-.about-split-row {
+.orgo-cards-soft-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: center;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
-.about-intro-box h3 {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 20px;
-  line-height: 1.25;
-}
-
-.about-intro-box p {
-  font-size: 16px;
-  color: var(--text-muted);
-  line-height: 1.75;
-  margin-bottom: 20px;
-}
-
-.about-features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.about-card-item {
-  background: var(--light-surface);
-  border: 1px solid var(--light-border);
-  border-radius: var(--card-radius);
-  padding: 32px 26px;
-  transition: var(--transition);
-  box-shadow: var(--shadow-subtle);
-}
-
-.about-card-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-elevated);
-  border-color: var(--accent-blue);
-}
-
-.about-icon-pill {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(37, 99, 235, 0.08);
-  color: var(--accent-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.about-card-item h4 {
-  font-size: 19px;
-  margin-bottom: 10px;
-  color: var(--text-dark);
-}
-
-.about-card-item p {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* ========================================================
-   PRODUCTS SECTION (Vanilla Yellow Spotlight & Card Grid)
-   ======================================================== */
-.spotlight-card-modern {
-  background: linear-gradient(135deg, #fef9c3 0%, #fef08a 55%, #fde68a 100%);
-  color: #0f172a;
-  border-radius: 30px;
-  padding: 56px;
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 48px;
-  align-items: center;
-  margin-bottom: 50px;
-  border: 1px solid rgba(161, 98, 7, 0.22);
-  box-shadow: 0 20px 50px rgba(161, 98, 7, 0.12);
-}
-
-.spotlight-left h3 {
-  font-size: 38px;
-  color: #0f172a;
-  margin-bottom: 8px;
-}
-
-.spotlight-tagline-text {
-  font-size: 16px;
-  color: #854d0e;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.spotlight-left p {
-  font-size: 16px;
-  color: #334155;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-.bullet-points-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 36px;
-}
-
-.bullet-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 15px;
-  color: #0f172a;
-  font-weight: 600;
-}
-
-.spotlight-button-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.spotlight-button-row .btn-pill-primary {
-  background: #0f172a;
-  color: #ffffff;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.3);
-}
-
-.spotlight-button-row .btn-pill-primary:hover {
-  background: #1e293b;
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.45);
-}
-
-.spotlight-button-row .btn-pill-outline-white {
-  background: rgba(255, 255, 255, 0.65);
-  color: #0f172a;
-  border-color: rgba(15, 23, 42, 0.25);
-}
-
-.spotlight-button-row .btn-pill-outline-white:hover {
-  background: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
-}
-
-.spotlight-right-display {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(161, 98, 7, 0.2);
-  border-radius: 24px;
-  padding: 36px;
-  text-align: center;
-}
-
-.spotlight-right-display h4 {
-  font-size: 32px;
-  color: #0f172a;
-  margin-bottom: 6px;
-}
-
-.spotlight-right-display span {
-  font-size: 13px;
-  color: #854d0e;
-  display: block;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-
-.spec-pills-cluster {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.spec-pill-box {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(161, 98, 7, 0.18);
-  padding: 10px 8px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-/* Products Grid */
-.modern-products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 26px;
-}
-
-.product-tile-card {
-  background: var(--light-surface);
-  border: 1px solid var(--light-border);
-  border-radius: var(--card-radius);
-  padding: 36px 30px;
+.orgo-soft-card {
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  padding: 32px 28px 24px 28px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   transition: var(--transition);
-  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
 }
 
-.product-tile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-elevated);
-  border-color: var(--accent-blue);
+.orgo-soft-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--orgo-blue);
 }
 
-.tile-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.tile-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(37, 99, 235, 0.08);
-  color: var(--accent-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tile-category-tag {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.5px;
-}
-
-.product-tile-card h4 {
+.orgo-soft-card-title {
   font-size: 21px;
-  margin-bottom: 12px;
+  font-weight: 700;
   color: var(--text-dark);
+  margin-bottom: 12px;
 }
 
-.product-tile-card p {
+.orgo-soft-card-desc {
   font-size: 14.5px;
   color: var(--text-muted);
   line-height: 1.65;
   margin-bottom: 24px;
-  flex-grow: 1;
 }
 
-.tile-link-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--accent-blue);
-  font-weight: 600;
-  font-size: 14.5px;
-  transition: gap 0.2s ease;
+.orgo-soft-card-img-wrap {
+  margin-top: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--bg-soft-gray);
 }
 
-.tile-link-arrow:hover {
-  gap: 12px;
+.orgo-soft-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.orgo-soft-card:hover .orgo-soft-card-img {
+  transform: scale(1.05);
 }
 
 /* ========================================================
-   EDUCATION SECTION (Pricing/Course Tier Cards)
+   SECTION: "Driving Success Through Innovation" (Orgocloud s_key_images)
    ======================================================== */
-.education-cards-grid {
+.orgo-driving-section {
+  padding: 85px 0;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+}
+
+.orgo-milestones-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
 }
 
-.course-card-modern {
-  background: var(--light-surface);
-  border: 1px solid var(--light-border);
-  border-radius: 24px;
-  padding: 40px 32px;
+.orgo-milestone-col {
   display: flex;
   flex-direction: column;
-  position: relative;
+  padding: 24px 20px;
+  background: var(--bg-light);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-color);
   transition: var(--transition);
-  box-shadow: var(--shadow-subtle);
 }
 
-.course-card-modern:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-elevated);
+.orgo-milestone-col:hover {
+  border-color: var(--orgo-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
-.course-card-modern.is-popular {
-  border: 2px solid var(--accent-blue);
-  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12);
+.orgo-milestone-number {
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 900;
+  color: var(--orgo-blue);
+  line-height: 1;
+  margin-bottom: 16px;
 }
 
-.popular-badge-pill {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--accent-blue);
-  color: #ffffff;
+.orgo-milestone-tag {
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.6px;
   text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: var(--pill-radius);
+  color: #92400e;
+  background: #fef3c7;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: 14px;
+  width: fit-content;
 }
 
-.course-level-tag {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent-blue);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-.course-card-modern h3 {
-  font-size: 23px;
-  margin-bottom: 6px;
-  color: var(--text-dark);
-}
-
-.course-audience-text {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  margin-bottom: 18px;
-}
-
-.course-card-modern p {
+.orgo-milestone-desc {
   font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.course-curriculum-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
-  flex-grow: 1;
-}
-
-.curriculum-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
   color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 /* ========================================================
-   LOCATIONS SECTION
+   SECTION: Call to Action Banner (Orgocloud s_call_to_action)
    ======================================================== */
-.locations-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.location-tile {
-  background: var(--light-surface);
-  border: 1px solid var(--light-border);
-  border-radius: var(--card-radius);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  transition: var(--transition);
-  box-shadow: var(--shadow-subtle);
-}
-
-.location-tile:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-elevated);
-  border-color: var(--accent-blue);
-}
-
-.location-tile.is-ho {
-  border-color: var(--accent-blue);
-  background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%);
-}
-
-.location-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.loc-badge-pill {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 4px 12px;
-  border-radius: var(--pill-radius);
-  background: var(--light-bg);
-  color: var(--text-muted);
-}
-
-.loc-badge-pill.ho-pill {
-  background: var(--accent-blue);
+.orgo-cta-banner-section {
+  background: linear-gradient(135deg, #2b689c 0%, #1e40af 100%);
   color: #ffffff;
+  padding: 70px 0;
+  position: relative;
 }
 
-.location-tile h4 {
-  font-size: 19px;
+.orgo-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.orgo-cta-text h3 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  color: #ffffff;
   margin-bottom: 8px;
-  color: var(--text-dark);
 }
 
-.location-tile p {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1;
+.orgo-cta-text p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.orgo-cta-btn-white {
+  background-color: #ffffff;
+  color: var(--orgo-blue);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 34px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.orgo-cta-btn-white:hover {
+  background-color: #f8fafc;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  color: var(--orgo-blue-hover);
 }
 
 /* ========================================================
-   TESTIMONIALS SECTION
+   SECTION: Testimonials (Orgocloud s_quotes_carousel)
    ======================================================== */
-.reviews-grid-modern {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.orgo-quotes-section {
+  padding: 85px 0;
+  background-color: var(--bg-light);
 }
 
-.review-card-modern {
-  background: var(--light-surface);
-  border: 1px solid var(--light-border);
-  border-radius: var(--card-radius);
-  padding: 34px 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: var(--transition);
-  box-shadow: var(--shadow-subtle);
+.orgo-quote-box {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-color);
+  position: relative;
 }
 
-.review-card-modern:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-elevated);
-}
-
-.star-rating-row {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 16px;
-  color: #f59e0b;
-}
-
-.review-quote-body {
-  font-size: 15px;
-  color: var(--text-dark);
-  line-height: 1.7;
-  font-style: italic;
-  margin-bottom: 24px;
-}
-
-.review-author-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.author-circle-avatar {
-  width: 44px;
-  height: 44px;
+.orgo-quote-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--orgo-blue);
+  color: #ffffff;
   border-radius: 50%;
-  background: var(--gold-base);
-  color: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
+  font-size: 22px;
+  margin: -82px auto 28px auto;
+  box-shadow: 0 6px 18px rgba(43, 104, 156, 0.35);
 }
 
-.author-meta-info h5 {
-  font-size: 15px;
+.orgo-quote-text {
+  font-size: 18.5px;
+  color: var(--text-dark);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.orgo-quote-author h5 {
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 2px;
 }
 
-.author-meta-info span {
-  font-size: 13px;
+.orgo-quote-author span {
+  font-size: 13.5px;
   color: var(--text-muted);
 }
 
 /* ========================================================
-   CONTACT SECTION (High Contrast Light + Obsidian Card)
+   SECTION: Contact Us Form (Orgocloud Exact s_website_form)
    ======================================================== */
-.contact-grid-modern {
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 48px;
-  align-items: start;
+.orgo-contact-section {
+  position: relative;
+  background-color: #ffffff;
+  padding: 50px 0 90px 0;
+  overflow: hidden;
 }
 
-.contact-channels-column {
+.orgo-contact-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  color: #141e2e;
+  margin-bottom: 45px;
+  font-family: var(--font-display);
+  letter-spacing: -0.5px;
+}
+
+.orgo-wavy-shape-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.orgo-form-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.orgo-form-table-layout {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  width: 100%;
 }
 
-.channel-card-modern {
-  background: var(--light-surface);
-  border: 1px solid var(--light-border);
-  border-radius: var(--card-radius);
-  padding: 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  transition: var(--transition);
-  box-shadow: var(--shadow-subtle);
-}
-
-.channel-card-modern:hover {
-  border-color: var(--accent-blue);
-  transform: translateY(-2px);
-}
-
-.channel-icon-pill {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(37, 99, 235, 0.08);
-  color: var(--accent-blue);
+.orgo-form-row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+}
+
+.orgo-form-row.align-top {
+  align-items: flex-start;
+}
+
+.orgo-field-label {
+  width: 200px;
+  flex-shrink: 0;
+  font-size: 15px;
+  color: #212529;
+  font-weight: 400;
+}
+
+.orgo-field-label .req {
+  color: #212529;
+  margin-left: 2px;
+}
+
+.orgo-field-control {
+  flex-grow: 1;
+}
+
+.orgo-exact-input {
+  width: 100%;
+  height: 44px;
+  padding: 8px 14px;
+  font-size: 15px;
+  color: #212529;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.orgo-exact-input:focus {
+  border-color: #3984c6;
+  box-shadow: 0 0 0 3px rgba(57, 132, 198, 0.2);
+}
+
+.orgo-exact-input::placeholder {
+  color: #8c98a4;
+  opacity: 0.85;
+}
+
+.orgo-exact-textarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: #212529;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.orgo-exact-textarea:focus {
+  border-color: #3984c6;
+  box-shadow: 0 0 0 3px rgba(57, 132, 198, 0.2);
+}
+
+.orgo-exact-submit-btn {
+  background-color: #2b689c;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border: 1px solid #296292;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.orgo-exact-submit-btn:hover {
+  background-color: #21527c;
+  border-color: #1c4669;
+}
+
+.orgo-submit-spacer {
+  width: 200px;
   flex-shrink: 0;
 }
 
-.channel-info-body h5 {
-  font-size: 16px;
-  margin-bottom: 4px;
-  color: var(--text-dark);
-}
-
-.channel-info-body a,
-.channel-info-body p {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.channel-info-body a:hover {
-  color: var(--accent-blue);
-}
-
-/* Contact Form Card */
-.form-card-modern {
-  background: var(--light-surface);
-  border: 1px solid var(--light-border);
-  border-radius: 28px;
-  padding: 44px 38px;
-  box-shadow: var(--shadow-elevated);
-}
-
-.form-card-modern h3 {
-  font-size: 26px;
-  margin-bottom: 8px;
-  color: var(--text-dark);
-}
-
-.form-card-modern .form-subhead {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  margin-bottom: 28px;
-}
-
-.form-field-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.form-input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
-}
-
-.form-input-group label {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.input-modern,
-.select-modern,
-.textarea-modern {
-  width: 100%;
-  padding: 13px 16px;
-  font-size: 14.5px;
-  font-family: inherit;
-  color: var(--text-dark);
-  background: var(--light-bg);
-  border: 1.5px solid var(--light-border);
-  border-radius: 12px;
-  outline: none;
-  transition: var(--transition);
-}
-
-.input-modern:focus,
-.select-modern:focus,
-.textarea-modern:focus {
-  background: #ffffff;
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 4px var(--accent-blue-glow);
-}
-
-.textarea-modern {
-  resize: vertical;
-  min-height: 110px;
-}
-
-.submission-banner {
-  margin-top: 20px;
-  padding: 18px 22px;
-  background: #ecfdf5;
-  border: 1.5px solid #a7f3d0;
-  border-radius: 16px;
-  color: #065f46;
+@media (max-width: 768px) {
+  .orgo-form-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .orgo-field-label {
+    width: 100%;
+  }
+  .orgo-submit-spacer {
+    display: none;
+  }
 }
 
 /* ========================================================
-   FOOTER (Creamy Vanilla Yellow Finish)
+   FOOTER (Orgocloud o_footer)
    ======================================================== */
-.footer-dark-wrapper {
-  background: linear-gradient(180deg, #fef9c3 0%, #fef08a 100%);
-  color: #1e293b;
-  padding: 80px 0 36px 0;
-  border-top: 1px solid rgba(161, 98, 7, 0.2);
-  position: relative;
-  z-index: 10;
+.orgo-footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  padding: 60px 0 0 0;
 }
 
-.footer-top-grid {
+.orgo-footer-top {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
   gap: 48px;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.footer-brand-column p {
+.orgo-footer-brand h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.orgo-footer-brand p {
   font-size: 14.5px;
+  color: var(--text-muted);
   line-height: 1.7;
-  color: #334155;
-  margin: 20px 0 24px 0;
 }
 
-.social-pills-row {
+.orgo-footer-links h5,
+.orgo-footer-contact h5 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.orgo-footer-links ul,
+.orgo-footer-contact ul {
+  list-style: none;
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-.social-pill-btn {
+.orgo-footer-links a,
+.orgo-footer-contact a {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.orgo-footer-links a:hover,
+.orgo-footer-contact a:hover {
+  color: var(--orgo-blue);
+}
+
+.orgo-social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.orgo-social-btn {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(161, 98, 7, 0.2);
-  color: #0f172a;
+  background: var(--bg-soft-gray);
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
 }
 
-.social-pill-btn:hover {
-  background: #0f172a;
-  color: #fef08a;
-  transform: translateY(-2px);
+.orgo-social-btn:hover {
+  background: var(--orgo-blue);
+  color: #ffffff;
 }
 
-.footer-col-nav h4 {
-  font-size: 16px;
-  color: #0f172a;
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: 0.3px;
-}
-
-.footer-link-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  list-style: none;
-}
-
-.footer-link-stack a {
-  font-size: 14px;
-  color: #334155;
-  font-weight: 500;
-}
-
-.footer-link-stack a:hover {
-  color: #000000;
-  font-weight: 700;
-  padding-left: 4px;
-}
-
-.footer-bottom-row {
-  border-top: 1px solid rgba(161, 98, 7, 0.2);
-  padding-top: 26px;
+.orgo-copyright-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 24px 0;
   font-size: 13.5px;
-  color: #475569;
+  color: var(--text-muted);
   flex-wrap: wrap;
   gap: 12px;
 }
 
 /* Floating WhatsApp Button */
-.whatsapp-floating-pill {
+.orgo-whatsapp-btn {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 58px;
-  height: 58px;
-  background-color: #25d366;
+  background-color: var(--orgo-green);
   color: #ffffff;
-  border-radius: 50%;
-  display: flex;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.45);
-  z-index: 999;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14.5px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1100;
   transition: var(--transition);
 }
 
-.whatsapp-floating-pill:hover {
-  transform: scale(1.1);
-  background-color: #1ebd5b;
+.orgo-whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+  color: #ffffff;
 }
 
-/* ========================================================
-   RESPONSIVE MEDIA QUERIES
-   ======================================================== */
-@media (max-width: 1080px) {
-  .hero-split-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
+/* Responsive */
+@media (max-width: 992px) {
+  .orgo-top-bar {
+    display: none;
   }
-  .about-split-row {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .orgo-navbar-content {
+    grid-template-columns: auto 1fr auto;
+    height: 70px;
   }
-  .spotlight-card-modern {
-    grid-template-columns: 1fr;
-    padding: 38px 28px;
-  }
-  .education-cards-grid {
-    grid-template-columns: 1fr;
-  }
-  .reviews-grid-modern {
-    grid-template-columns: 1fr;
-  }
-  .contact-grid-modern {
-    grid-template-columns: 1fr;
-  }
-  .footer-top-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-links,
-  .navbar-right-actions {
+  .orgo-nav-menu,
+  .orgo-search-pill {
     display: none;
   }
   .mobile-toggle-btn {
     display: block;
   }
-  .hero-giant-heading {
-    font-size: 46px;
-    letter-spacing: -1px;
-    margin-bottom: 28px;
-  }
-  .hero-stats-band {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .about-features-grid {
+  .orgo-cards-soft-grid,
+  .orgo-milestones-grid,
+  .orgo-footer-top {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
-  .form-field-grid {
+  .orgo-form-grid {
     grid-template-columns: 1fr;
-  }
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-office-img {
-    height: 340px;
   }
 }
+
+/* Support Ticket Form Styles (Matches Create Your Ticket UI) */
+.support-exact-input {
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px;
+  font-size: 15px;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-exact-input:focus {
+  border-color: #2b689c;
+  box-shadow: 0 0 0 3px rgba(43, 104, 156, 0.15);
+}
+
+.support-exact-input::placeholder {
+  color: #9ca3af;
+}
+
+.support-exact-select {
+  width: 100%;
+  height: 48px;
+  padding: 10px 40px 10px 16px;
+  font-size: 15px;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-exact-select:focus {
+  border-color: #2b689c;
+  box-shadow: 0 0 0 3px rgba(43, 104, 156, 0.15);
+}
+
+.support-exact-textarea {
+  width: 100%;
+  min-height: 92px;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-exact-textarea:focus {
+  border-color: #2b689c;
+  box-shadow: 0 0 0 3px rgba(43, 104, 156, 0.15);
+}
+
+.support-exact-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.support-exact-submit-btn {
+  width: 100%;
+  height: 50px;
+  background-color: #172541;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.support-exact-submit-btn:hover {
+  background-color: #21355a;
+  box-shadow: 0 4px 16px rgba(23, 37, 65, 0.35);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 992px) {
+  .orgo-support-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .orgo-support-modes-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+

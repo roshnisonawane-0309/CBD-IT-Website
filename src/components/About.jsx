@@ -1,86 +1,40 @@
 import React from "react";
-import { Star, Globe, Headset, GraduationCap, CheckCircle2, ArrowRight } from "lucide-react";
+import { ChevronRight, Award, ShieldCheck, Users } from "lucide-react";
 import { companyData } from "../data/content";
 
 export default function About() {
-  const highlights = [
-    {
-      icon: <Star size={24} />,
-      title: "5-Star Tally Partner",
-      desc: "Top certified tier in India, upholding highest standards in sales, deployment, and cloud migration.",
-    },
-    {
-      icon: <Globe size={24} />,
-      title: "Nationwide & Global Reach",
-      desc: "Serving thousands of enterprises across Mumbai, Maharashtra, Chhattisgarh, and international clients.",
-    },
-    {
-      icon: <Headset size={24} />,
-      title: "Dedicated Technical Support",
-      desc: "Certified engineers available for quick troubleshooting, custom reports, and AMC support.",
-    },
-    {
-      icon: <GraduationCap size={24} />,
-      title: "Tally Education Academy",
-      desc: "Structured training programs allowing students and accountants to achieve corporate accounting mastery.",
-    },
-  ];
-
   return (
-    <section className="light-section light-section-white" id="about">
+    <section className="orgo-who-section" id="who-we-are">
       <div className="container">
-        <div className="center-header">
-          <span className="section-eyebrow">Company Profile</span>
-          <h2 className="section-headline">The Best Tally Certified 5-Star Partner</h2>
-          <p className="section-subtext">
-            {companyData.subtitle}
-          </p>
-        </div>
+        <h2 className="orgo-who-title">
+          <span className="text-gradient-blue">Who are we?</span>
+        </h2>
 
-        {/* Story & Founders */}
-        <div className="about-split-row">
-          <div className="about-intro-box">
-            <h3>Delivering Business IT Excellence Since 2000</h3>
-            <p>
-              <strong>{companyData.name}</strong> (Core Business Development), formerly
-              known as <em>Sunny Enterprises</em>, was established in 2000 by
-              founders <strong>Mr. Santosh Wadode</strong>,{" "}
-              <strong>Mrs. Trupti Sannake</strong>, and{" "}
-              <strong>Mrs. Smita Wadode</strong>.
-            </p>
-            <p>
-              {companyData.aboutExtended}
-            </p>
+        <p className="orgo-who-body">
+          <strong>{companyData.name}</strong> (Core Business Development), formerly known
+          as <em>Sunny Enterprises</em>, is a premier <strong>Authorized Tally Certified 5-Star Partner</strong> headquartered
+          in CBD Belapur, Navi Mumbai. Established in 2000 by <strong>Mr. Santosh Wadode</strong>,{" "}
+          <strong>Mrs. Trupti Sannake</strong>, and <strong>Mrs. Smita Wadode</strong>, we have been delivering
+          mission-critical business accounting, cloud ERP, and compliance solutions to organizations across India and internationally for over 25 years.
+        </p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px", margin: "24px 0" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: 500, color: "var(--text-dark)" }}>
-                <CheckCircle2 size={18} color="var(--accent-blue)" />
-                <span>Authorized Tally Partner for over 25 years</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: 500, color: "var(--text-dark)" }}>
-                <CheckCircle2 size={18} color="var(--accent-blue)" />
-                <span>6 Office branches across Maharashtra and Chhattisgarh</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "15px", fontWeight: 500, color: "var(--text-dark)" }}>
-                <CheckCircle2 size={18} color="var(--accent-blue)" />
-                <span>End-to-end accounting, payroll, CRM, and cloud IT services</span>
-              </div>
-            </div>
+        <p className="orgo-who-body">
+          Our team of certified consultants and technical engineers brings deep expertise across TallyPrime deployment,
+          custom TDL reporting, Spine HR & payroll automation, and secure cloud hosting. We work closely with SMEs and large corporates
+          to eliminate manual errors, ensure 100% statutory GST/TDS compliance, and drive measurable operational growth.
+        </p>
 
-            <a href="#contact" className="btn-pill btn-pill-dark">
-              Get In Touch With Our Team <ArrowRight size={16} />
-            </a>
-          </div>
+        <hr className="orgo-thick-separator" />
 
-          {/* Cards Grid */}
-          <div className="about-features-grid">
-            {highlights.map((item, idx) => (
-              <div className="about-card-item" key={idx}>
-                <div className="about-icon-pill">{item.icon}</div>
-                <h4>{item.title}</h4>
-                <p>{item.desc}</p>
-              </div>
-            ))}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "16px" }}>
+          <a href="#products" className="orgo-discover-link">
+            DISCOVER MORE &nbsp; <ChevronRight size={18} />
+          </a>
+
+          <div style={{ display: "flex", gap: "24px", color: "var(--text-muted)", fontSize: "14px", fontWeight: 500 }}>
+            <span>✓ 25+ Years Experience</span>
+            <span>✓ 10,000+ Clients Served</span>
+            <span>✓ 5 Strategic Offices</span>
           </div>
         </div>
       </div>

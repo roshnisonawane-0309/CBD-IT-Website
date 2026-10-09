@@ -8,11 +8,12 @@ export default function WhatsAppButton() {
       href={companyData.contacts.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="whatsapp-floating-btn"
-      aria-label="Chat on WhatsApp"
+      className="orgo-whatsapp-btn"
+      aria-label="Chat with us on WhatsApp"
       id="floating-whatsapp-btn"
     >
-      <MessageCircle size={32} />
+      <MessageCircle size={22} />
+      <span>Chat with us</span>
     </a>
   );
 }
