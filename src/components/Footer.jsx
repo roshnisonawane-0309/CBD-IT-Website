@@ -1,33 +1,34 @@
 import React from "react";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import { companyData, productsData } from "../data/content";
 
 export default function Footer() {
   return (
-    <footer className="footer-dark-wrapper" id="footer">
+    <footer className="orgo-footer" id="footer">
       <div className="container">
-        <div className="footer-top-grid">
+        <div className="orgo-footer-top">
           {/* Brand Column */}
-          <div className="footer-brand-column">
-            <div className="logo-pill-badge" style={{ padding: "6px 16px" }}>
+          <div className="orgo-footer-brand">
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
               <img
                 src="/logo.png"
                 alt="CBD IT Solutions Pvt. Ltd."
-                style={{ height: "50px", width: "auto" }}
+                style={{ height: "48px", width: "auto" }}
               />
+              <span style={{ fontSize: "18px", fontWeight: 800, color: "var(--text-dark)", letterSpacing: "-0.3px" }}>
+                CBD IT Solutions
+              </span>
             </div>
             <p>
-              <strong>CBD IT Solutions Pvt. Ltd.</strong> — Authorized Tally
-              Certified 5-Star Partner for over 25 years. Delivering
-              trusted enterprise business accounting, payroll, CRM, and cloud
-              solutions to organizations across India and abroad.
+              Authorized Tally Certified 5-Star Partner with over 25+ years of proven business excellence.
+              We empower enterprises with seamless accounting automation, Spine HR & Payroll, CRM, cloud ERP, and professional training.
             </p>
-            <div className="social-pills-row">
+            <div className="orgo-social-icons">
               <a
                 href={companyData.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-pill-btn"
+                className="orgo-social-btn"
                 aria-label="LinkedIn"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -38,8 +39,8 @@ export default function Footer() {
                 href={companyData.socialLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-pill-btn"
-                aria-label="Twitter / X"
+                className="orgo-social-btn"
+                aria-label="Twitter"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -49,7 +50,7 @@ export default function Footer() {
                 href={companyData.socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-pill-btn"
+                className="orgo-social-btn"
                 aria-label="Facebook"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -60,7 +61,7 @@ export default function Footer() {
                 href={companyData.socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-pill-btn"
+                className="orgo-social-btn"
                 aria-label="Instagram"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -73,7 +74,7 @@ export default function Footer() {
                 href={companyData.socialLinks.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-pill-btn"
+                className="orgo-social-btn"
                 aria-label="YouTube"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -83,80 +84,107 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation Column */}
-          <div className="footer-col-nav">
-            <h4>Navigation</h4>
-            <ul className="footer-link-stack">
+          {/* Quick Links Column */}
+          <div className="orgo-footer-links">
+            <h5>Quick Links</h5>
+            <ul>
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About Us</a></li>
-              <li><a href="#products">Solutions</a></li>
-              <li><a href="#education">Tally Education</a></li>
+              <li><a href="#journey">Products & Solutions</a></li>
+              <li><a href="#driving-success">Driving Innovation</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
               <li><a href="#locations">Office Branches</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Software Products */}
-          <div className="footer-col-nav">
-            <h4>Products</h4>
-            <ul className="footer-link-stack">
-              {productsData.map((p) => (
-                <li key={p.id}>
-                  <a href={`#${p.id}`}>{p.name}</a>
-                </li>
-              ))}
+              <li><a href="#support">Helpdesk & Support</a></li>
+              <li><a href="#contact">Contact Us</a></li>
               <li>
-                <a
-                  href={companyData.externalLinks.shop}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#0f172a", fontWeight: 700 }}
-                >
-                  Online Shop ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href={companyData.externalLinks.download}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Downloads ↗
+                <a href={companyData.externalLinks.shop} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: "var(--orgo-blue)" }}>
+                  Online Store <ExternalLink size={12} style={{ display: "inline", verticalAlign: "middle" }} />
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact Details */}
-          <div className="footer-col-nav">
-            <h4>Head Office</h4>
-            <p style={{ fontSize: "14px", color: "#1e293b", marginBottom: "14px", lineHeight: "1.6" }}>
-              810, B Wing, Punit Tower 2, Sector 11, CBD Belapur, Navi Mumbai, Maharashtra
-            </p>
-            <p style={{ fontSize: "14px", color: "#0f172a", marginBottom: "8px" }}>
-              <strong>Phone:</strong> {companyData.contacts.primaryPhone}
-            </p>
-            <p style={{ fontSize: "14px", color: "#0f172a", marginBottom: "20px" }}>
-              <strong>Email:</strong> {companyData.contacts.primaryEmail}
-            </p>
+          {/* Connect With Us & Offices Column */}
+          <div className="orgo-footer-contact">
+            <h5>Office Locations</h5>
+            <ul style={{ gap: "14px" }}>
+              <li style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                <Phone size={17} style={{ color: "var(--orgo-blue)", marginTop: "4px", flexShrink: 0 }} />
+                <div style={{ fontSize: "14px" }}>
+                  <div>
+                    <a href={`tel:${companyData.contacts.primaryPhone.replace(/\s+/g, "")}`}>
+                      {companyData.contacts.primaryPhone}
+                    </a>
+                  </div>
+                  <div style={{ marginTop: "3px" }}>
+                    <span style={{ fontSize: "12px", color: "var(--orgo-blue)", fontWeight: 600 }}>Raipur: </span>
+                    <a href={`tel:${companyData.contacts.raipurPhone.replace(/\s+/g, "")}`}>
+                      {companyData.contacts.raipurPhone}
+                    </a>
+                  </div>
+                  <div style={{ marginTop: "3px" }}>
+                    <span style={{ fontSize: "12px", color: "var(--orgo-blue)", fontWeight: 600 }}>Jalgaon: </span>
+                    <a href={`tel:${companyData.contacts.jalgaonPhone.replace(/\s+/g, "")}`}>
+                      {companyData.contacts.jalgaonPhone}
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                <Mail size={17} style={{ color: "var(--orgo-blue)", marginTop: "4px", flexShrink: 0 }} />
+                <div style={{ fontSize: "14px" }}>
+                  <a href={`mailto:${companyData.contacts.primaryEmail}`}>
+                    {companyData.contacts.primaryEmail}
+                  </a>
+                  <br />
+                  <a href={`mailto:${companyData.contacts.supportEmail}`}>
+                    {companyData.contacts.supportEmail}
+                  </a>
+                </div>
+              </li>
+              <li style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                <MapPin size={17} style={{ color: "var(--orgo-blue)", marginTop: "4px", flexShrink: 0 }} />
+                <div style={{ fontSize: "13.5px", color: "var(--text-muted)", lineHeight: "1.5" }}>
+                  <p style={{ margin: "0 0 6px 0" }}>
+                    <strong style={{ color: "var(--text-dark)" }}>H.O:</strong> {companyData.contacts.headOffice}
+                  </p>
+                  <p style={{ margin: "0 0 6px 0" }}>
+                    <strong style={{ color: "var(--text-dark)" }}>B.O (Dombivli):</strong> Office No 612, 6th floor, Navare Plaza, Ramnagar, Dombivli (E) 421201
+                  </p>
+                  <p style={{ margin: "0 0 6px 0" }}>
+                    <strong style={{ color: "var(--text-dark)" }}>B.O (Andheri):</strong> Old Nagardas Road, MD CHS, Patelwadi, Andheri (E), Mumbai
+                  </p>
+                  <div style={{ marginTop: "8px" }}>
+                    <a href="#locations" style={{ color: "var(--orgo-blue)", fontWeight: 600, fontSize: "13px" }}>
+                      View all 5 office locations & maps →
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
 
-            <a
-              href={companyData.contacts.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pill btn-pill-outline-white btn-pill-sm"
-              style={{ width: "100%", justifyContent: "center" }}
-            >
-              WhatsApp Support ↗
-            </a>
+            <div style={{ marginTop: "18px" }}>
+              <a
+                href={companyData.contacts.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-orgo-outline"
+                style={{ fontSize: "13.5px", padding: "8px 20px" }}
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="footer-bottom-row">
-          <p>© {new Date().getFullYear()} CBD IT Solutions Pvt. Ltd. All rights reserved.</p>
-          <p>Authorized Tally 5-Star Partner | Navi Mumbai, Maharashtra, India</p>
+        {/* Copyright Row */}
+        <div className="orgo-copyright-row">
+          <div>
+            Copyright © {new Date().getFullYear()} CBD IT Solutions Pvt. Ltd. All rights reserved.
+          </div>
+          <div>
+            Authorized Tally Certified 5-Star Partner
+          </div>
         </div>
       </div>
     </footer>

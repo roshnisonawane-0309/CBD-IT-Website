@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, ArrowRight, MessageCircle } from "lucide-react";
+import { Menu, X, Search, Phone, Mail, Award, MessageCircle } from "lucide-react";
 import { companyData } from "../data/content";
 
-export default function Navbar() {
+export default function Navbar({ onOpenSupportModal }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 25);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -16,65 +17,116 @@ export default function Navbar() {
 
   const closeMenu = () => setMobileOpen(false);
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      window.location.href = "#products";
+    }
+  };
+
   return (
-    <>
-      <header className={`navbar-wrapper ${scrolled ? "scrolled" : ""}`} id="site-header">
-        <div className="container navbar-content">
-          {/* Logo in Clean White Pill Badge */}
-          <a href="#home" className="logo-pill-badge" id="main-brand-logo" aria-label="CBD IT Solutions Home">
-            <img
-              src="/logo.png"
-              alt="CBD IT Solutions Pvt. Ltd."
-              className="navbar-logo-img"
-            />
-          </a>
-
-          {/* Center Navigation Links (Wix SaaS Style) */}
-          <nav className="navbar-links" aria-label="Main Navigation">
-            <a href="#home" className="nav-link-item">Home</a>
-            <a href="#about" className="nav-link-item">About</a>
-            <a href="#products" className="nav-link-item">Solutions</a>
-            <a href="#education" className="nav-link-item">Education</a>
-            <a href="#locations" className="nav-link-item">Locations</a>
-            <a href="#contact" className="nav-link-item">Contact</a>
-          </nav>
-
-          {/* Right Action Button */}
-          <div className="navbar-right-actions">
-            <a
-              href={companyData.externalLinks.shop}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link-item"
-              style={{ fontSize: "14px", color: "#1e293b", fontWeight: 600 }}
-            >
-              Shop ↗
+    <header id="site-header">
+      {/* Top Utility Bar (Orgocloud Style) */}
+      <div className="orgo-top-bar">
+        <div className="container orgo-top-bar-content">
+          <div className="orgo-top-links">
+            <a href={`mailto:${companyData.contacts.primaryEmail}`}>
+              <Mail size={14} color="var(--orgo-blue)" />
+              <span>{companyData.contacts.primaryEmail}</span>
             </a>
-            <a href="#contact" className="btn-pill btn-pill-outline-white btn-pill-sm">
-              Contact
+            <a href={`tel:${companyData.contacts.primaryPhone.replace(/\s+/g, "")}`}>
+              <Phone size={14} color="var(--orgo-blue)" />
+              <span>{companyData.contacts.primaryPhone}</span>
             </a>
           </div>
 
-          {/* Mobile Hamburger Toggle */}
-          <button
-            className="mobile-toggle-btn"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open Navigation"
-            id="mobile-drawer-toggle"
-          >
-            <Menu size={26} />
-          </button>
+          <div className="orgo-top-right">
+            <span className="partner-badge">
+              <Award size={13} />
+              <span>Authorized Tally 5-Star Partner</span>
+            </span>
+            <button
+              type="button"
+              onClick={onOpenSupportModal || (() => { window.location.href = "#support"; })}
+              style={{
+                fontSize: "13px",
+                fontWeight: 600,
+                color: "var(--orgo-blue)",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
+              }}
+            >
+              Quick Support
+            </button>
+          </div>
         </div>
-      </header>
+      </div>
 
-      {/* Mobile Drawer (Vanilla Yellow Theme) */}
+      {/* Main Navigation (Orgocloud Style) */}
+      <nav className={`orgo-navbar-wrapper ${scrolled ? "scrolled" : ""}`}>
+        <div className="container orgo-navbar-content">
+          {/* Brand Logo */}
+          <a href="#home" className="orgo-logo-link" id="main-brand-logo" aria-label="CBD IT Solutions Home">
+            <img
+              src="/logo.png"
+              alt="CBD IT Solutions Pvt. Ltd."
+              className="orgo-navbar-logo-img"
+            />
+          </a>
+
+          {/* Navigation Menu */}
+          <ul className="orgo-nav-menu" aria-label="Main Navigation">
+            <li><a href="#home" className="orgo-nav-link active">Home</a></li>
+            <li><a href="#who-we-are" className="orgo-nav-link">About Us</a></li>
+            <li><a href="#products" className="orgo-nav-link">Services</a></li>
+            <li><a href="#education" className="orgo-nav-link">Success Stories</a></li>
+            <li><a href="#locations" className="orgo-nav-link">Branches</a></li>
+            <li><a href="#support" className="orgo-nav-link">Support</a></li>
+            <li><a href="#contact" className="orgo-nav-link">Contact</a></li>
+          </ul>
+
+          {/* Right Action: Search Bar & Book Now CTA */}
+          <div className="orgo-navbar-actions">
+            <form className="orgo-search-pill" onSubmit={handleSearchSubmit}>
+              <input
+                type="text"
+                placeholder="Search solutions..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search software solutions"
+              />
+              <button type="submit" className="orgo-search-btn" aria-label="Search">
+                <Search size={14} />
+              </button>
+            </form>
+
+            <a href="#contact" className="btn-orgo-primary" id="navbar-book-now-btn">
+              Book Now
+            </a>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              className="mobile-toggle-btn"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open Navigation"
+              id="mobile-drawer-toggle"
+            >
+              <Menu size={26} />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Drawer (Orgocloud Clean White Theme) */}
       {mobileOpen && (
         <div
           style={{
             position: "fixed",
             inset: 0,
-            background: "rgba(161, 98, 7, 0.25)",
-            backdropFilter: "blur(8px)",
+            background: "rgba(20, 30, 46, 0.4)",
+            backdropFilter: "blur(4px)",
             zIndex: 1200,
           }}
           onClick={closeMenu}
@@ -87,8 +139,8 @@ export default function Navbar() {
               bottom: 0,
               width: "320px",
               maxWidth: "85vw",
-              background: "var(--vanilla-surface)",
-              borderLeft: "1px solid var(--vanilla-border)",
+              background: "#ffffff",
+              boxShadow: "-8px 0 24px rgba(0, 0, 0, 0.15)",
               padding: "28px",
               display: "flex",
               flexDirection: "column",
@@ -101,50 +153,44 @@ export default function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                paddingBottom: "20px",
-                borderBottom: "1px solid var(--vanilla-border)",
+                paddingBottom: "18px",
+                borderBottom: "1px solid var(--border-color)",
                 marginBottom: "24px",
               }}
             >
-              <div className="logo-pill-badge" style={{ padding: "5px 14px" }}>
-                <img src="/logo.png" alt="CBD IT Solutions" style={{ height: "42px", width: "auto" }} />
-              </div>
-              <button onClick={closeMenu} style={{ color: "#0f172a" }} aria-label="Close">
+              <img src="/logo.png" alt="CBD IT Solutions" style={{ height: "46px", width: "auto" }} />
+              <button onClick={closeMenu} style={{ color: "var(--text-dark)" }} aria-label="Close">
                 <X size={24} />
               </button>
             </div>
 
             <nav style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-              <a href="#home" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Home</a>
-              <a href="#about" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>About Us</a>
-              <a href="#products" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Products & Services</a>
-              <a href="#education" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Tally Education</a>
-              <a href="#locations" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Branch Locations</a>
-              <a href="#contact" onClick={closeMenu} style={{ color: "#0f172a", fontSize: "16px", fontWeight: 700 }}>Contact Us</a>
+              <a href="#home" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Home</a>
+              <a href="#who-we-are" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>About Us</a>
+              <a href="#products" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Services</a>
+              <a href="#education" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Success Stories</a>
+              <a href="#locations" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Branches</a>
+              <a href="#support" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Support</a>
+              <a href="#contact" onClick={closeMenu} style={{ color: "var(--text-dark)", fontSize: "16px", fontWeight: 600 }}>Contact</a>
             </nav>
 
             <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "12px" }}>
+              <a href="#contact" onClick={closeMenu} className="btn-orgo-primary" style={{ width: "100%", justifyContent: "center" }}>
+                Book Now
+              </a>
               <a
                 href={companyData.contacts.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pill btn-pill-primary"
-                style={{ background: "#25d366", boxShadow: "none" }}
+                className="btn-orgo-outline"
+                style={{ width: "100%", justifyContent: "center", color: "#16a34a", borderColor: "#16a34a" }}
               >
                 <MessageCircle size={16} /> WhatsApp Inquiry
-              </a>
-              <a
-                href={companyData.externalLinks.shop}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-pill-outline-white"
-              >
-                Online Store ↗
               </a>
             </div>
           </div>
         </div>
       )}
-    </>
+    </header>
   );
 }

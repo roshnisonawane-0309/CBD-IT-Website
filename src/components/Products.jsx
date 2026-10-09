@@ -1,174 +1,82 @@
 import React from "react";
-import {
-  Check,
-  ArrowRight,
-  Download,
-  ShoppingCart,
-  Users2,
-  LineChart,
-  PhoneCall,
-  MapPin,
-  Handshake,
-  ExternalLink,
-} from "lucide-react";
-import { productsData, companyData } from "../data/content";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Products() {
-  const tally = productsData.find((p) => p.id === "tallyprime");
-  const otherProducts = productsData.filter((p) => p.id !== "tallyprime");
-
-  const getProductIcon = (id) => {
-    switch (id) {
-      case "spine":
-        return <Users2 size={22} />;
-      case "crm":
-        return <LineChart size={22} />;
-      case "telecaller":
-        return <PhoneCall size={22} />;
-      case "sarathi":
-        return <MapPin size={22} />;
-      case "sanchay":
-        return <Handshake size={22} />;
-      default:
-        return <ShoppingCart size={22} />;
-    }
-  };
+  const cards = [
+    {
+      title: "TallyPrime 5.1 & Cloud ERP",
+      desc: "Our TallyPrime enterprise deployment covers multi-user network setups, automated GST & e-invoicing, banking integration, and remote cloud hosting for anytime, anywhere access.",
+      image: "/card-tally.jpg",
+      badge: "Featured Software",
+      link: "#contact",
+    },
+    {
+      title: "Spine HR & Payroll Suite",
+      desc: "End-to-end human resource management featuring biometric attendance synchronization, automated salary computation, leaves processing, and 100% PF/ESI statutory compliance.",
+      image: "/card-hr.jpg",
+      badge: "Enterprise HR",
+      link: "#contact",
+    },
+    {
+      title: "CRM & Business Automation",
+      desc: "Customized CRM and telecaller workflows designed to capture leads, track customer interaction history, issue instant GST quotations, and provide real-time sales pipeline visibility.",
+      image: "/card-crm.jpg",
+      badge: "Growth Engine",
+      link: "#contact",
+    },
+  ];
 
   return (
-    <section className="light-section" id="products">
+    <section className="orgo-journey-section" id="products">
       <div className="container">
-        <div className="center-header">
-          <span className="section-eyebrow">Enterprise Software</span>
-          <h2 className="section-headline">Products & Solutions</h2>
-          <p className="section-subtext">
-            Comprehensive business accounting, HR, CRM, and automation solutions engineered to elevate organizational efficiency.
-          </p>
+        <div className="orgo-section-header">
+          <h2>Your Journey Begins Here</h2>
+          <p>We make every moment count with solutions designed just for you.</p>
         </div>
 
-        {/* Dark Obsidian Spotlight for TallyPrime (Contrast Anchor) */}
-        {tally && (
-          <div className="spotlight-card-modern" id="tallyprime">
-            <div className="spotlight-left">
+        <div className="orgo-cards-soft-grid">
+          {cards.map((card, idx) => (
+            <div className="orgo-soft-card" key={idx}>
               <span
                 style={{
-                  display: "inline-block",
-                  background: "#0f172a",
-                  color: "#fef08a",
                   fontSize: "12px",
-                  fontWeight: 800,
-                  letterSpacing: "0.5px",
+                  fontWeight: 700,
                   textTransform: "uppercase",
-                  padding: "5px 14px",
-                  borderRadius: "var(--pill-radius)",
+                  color: "var(--orgo-blue)",
+                  background: "var(--orgo-blue-soft)",
+                  padding: "4px 12px",
+                  borderRadius: "var(--radius-pill)",
                   marginBottom: "16px",
-                  boxShadow: "0 2px 8px rgba(15, 23, 42, 0.15)",
+                  display: "inline-block",
+                  width: "fit-content",
                 }}
               >
-                ★ Featured Software
+                {card.badge}
               </span>
-              <h3>{tally.name}</h3>
-              <div className="spotlight-tagline-text">{tally.tagline}</div>
-              <p>{tally.description}</p>
 
-              <div className="bullet-points-list">
-                {tally.highlights.map((feat, i) => (
-                  <div className="bullet-row" key={i}>
-                    <Check size={18} color="#854d0e" style={{ flexShrink: 0, marginTop: "2px" }} />
-                    <span>{feat}</span>
-                  </div>
-                ))}
+              <h3 className="orgo-soft-card-title">{card.title}</h3>
+              <p className="orgo-soft-card-desc">{card.desc}</p>
+
+              <div className="orgo-soft-card-img-wrap">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="orgo-soft-card-img"
+                  loading="lazy"
+                />
               </div>
 
-              <div className="spotlight-button-row">
+              <div style={{ marginTop: "20px", display: "flex", justifyContent: "flex-end" }}>
                 <a
-                  href={tally.buyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-primary"
+                  href={card.link}
+                  className="orgo-discover-link"
+                  style={{ fontSize: "14px" }}
                 >
-                  <ShoppingCart size={16} /> Buy TallyPrime
-                </a>
-                <a
-                  href={tally.downloadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-outline-white"
-                >
-                  <Download size={16} /> Download Setup ↗
-                </a>
-                <a href="#contact" className="btn-pill btn-pill-outline-white">
-                  Request Demo
+                  Learn More <ArrowRight size={15} />
                 </a>
               </div>
-            </div>
-
-            <div className="spotlight-right-display">
-              <h4>TallyPrime 5.1</h4>
-              <span>Official Release</span>
-              <div className="spec-pills-cluster">
-                <div className="spec-pill-box">GST Ready</div>
-                <div className="spec-pill-box">Auto Banking</div>
-                <div className="spec-pill-box">Multi-User</div>
-                <div className="spec-pill-box">Remote Cloud</div>
-                <div className="spec-pill-box">Inventory MIS</div>
-                <div className="spec-pill-box">Payroll Ready</div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Clean Light Tiles for Other Products */}
-        <div className="modern-products-grid">
-          {otherProducts.map((prod) => (
-            <div className="product-tile-card" key={prod.id} id={prod.id}>
-              <div className="tile-header-row">
-                <div className="tile-icon-box">{getProductIcon(prod.id)}</div>
-                <span className="tile-category-tag">{prod.category}</span>
-              </div>
-              <h4>{prod.name}</h4>
-              <p>{prod.description}</p>
-              <a
-                href={prod.linkUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tile-link-arrow"
-              >
-                Learn More <ArrowRight size={15} />
-              </a>
             </div>
           ))}
-
-          {/* Official Software Store Card */}
-          <div
-            className="product-tile-card"
-            style={{
-              borderColor: "var(--accent-blue)",
-              background: "linear-gradient(145deg, #ffffff 0%, #eff6ff 100%)",
-            }}
-          >
-            <div className="tile-header-row">
-              <div className="tile-icon-box" style={{ background: "var(--accent-blue)", color: "#fff" }}>
-                <ShoppingCart size={22} />
-              </div>
-              <span className="tile-category-tag" style={{ color: "var(--accent-blue)" }}>
-                Online Store
-              </span>
-            </div>
-            <h4>Official Software Store</h4>
-            <p>
-              Purchase fresh TallyPrime licenses, Tally Software Services (TSS)
-              renewals, multi-user expansions, and customized add-ons online.
-            </p>
-            <a
-              href={companyData.externalLinks.shop}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pill btn-pill-primary btn-pill-sm"
-              style={{ marginTop: "auto" }}
-            >
-              Visit Store <ExternalLink size={14} />
-            </a>
-          </div>
         </div>
       </div>
     </section>

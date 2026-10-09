@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -6,35 +6,52 @@ import Products from "./components/Products";
 import Education from "./components/Education";
 import Testimonials from "./components/Testimonials";
 import Locations from "./components/Locations";
+import Support from "./components/Support";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
+  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+
   return (
     <div className="site-canvas">
-      {/* Sleek Dark Top Navbar */}
-      <Navbar />
+      {/* Orgocloud Multi-Tier Header */}
+      <Navbar onOpenSupportModal={() => setIsSupportModalOpen(true)} />
 
       <main id="main-content">
-        {/* Bold Dot-Matrix Dark Hero (Wix 4260 & 4262 Inspiration) */}
+        {/* Full-width Hero with Frosted Glass Center Card & Book Now CTA */}
         <Hero />
 
-        {/* Curved Contour Transition to Clean Light Sections */}
-        <div className="light-content-wrapper">
-          <About />
-          <Products />
-          <Education />
-          <Testimonials />
-          <Locations />
-          <Contact />
-        </div>
+        {/* "Who are we?" Section with Gradient Header & Divider */}
+        <About />
+
+        {/* "Your Journey Begins Here" Soft Cards */}
+        <Products />
+
+        {/* "Driving Success Through Innovation" Milestones & Call to Action */}
+        <Education />
+
+        {/* Testimonials Blockquote Carousel */}
+        <Testimonials />
+
+        {/* Branch Offices Across India */}
+        <Locations />
+
+        {/* Dedicated Support Ticket Section & Modal */}
+        <Support
+          isModalOpen={isSupportModalOpen}
+          onCloseModal={() => setIsSupportModalOpen(false)}
+        />
+
+        {/* Contact Us Form */}
+        <Contact />
       </main>
 
-      {/* Deep Obsidian Footer */}
-      <Footer />
+      {/* Orgocloud 3-Column Footer */}
+      <Footer onOpenSupportModal={() => setIsSupportModalOpen(true)} />
 
-      {/* WhatsApp Floating Contact Pill */}
+      {/* Floating WhatsApp Action Pill */}
       <WhatsAppButton />
     </div>
   );

@@ -1,45 +1,130 @@
-import React from "react";
-import { Star } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonialsData } from "../data/content";
 
 export default function Testimonials() {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % testimonialsData.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentIdx((prev) =>
+      prev === 0 ? testimonialsData.length - 1 : prev - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIdx((prev) => (prev + 1) % testimonialsData.length);
+  };
+
+  const current = testimonialsData[currentIdx];
+
   return (
-    <section className="light-section light-section-white" id="testimonials">
+    <section className="orgo-quotes-section" id="testimonials">
       <div className="container">
-        <div className="center-header">
-          <span className="section-eyebrow">Client Feedback</span>
-          <h2 className="section-headline">Trusted by Industry Leaders</h2>
-          <p className="section-subtext">
-            Read what corporate leaders and business owners say about partnering with CBD IT Solutions.
-          </p>
+        <div className="orgo-section-header">
+          <span className="orgo-eyebrow">Client Feedback</span>
+          <h2 className="orgo-heading">What Our Clients Say</h2>
+          <div className="orgo-header-divider"></div>
         </div>
 
-        <div className="reviews-grid-modern">
-          {testimonialsData.map((item, idx) => (
-            <div className="review-card-modern" key={idx}>
-              <div>
-                <div className="star-rating-row">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
-                  ))}
-                </div>
-                <p className="review-quote-body">"{item.quote}"</p>
-              </div>
-
-              <div className="review-author-wrap">
-                <div className="author-circle-avatar">
-                  {item.author
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </div>
-                <div className="author-meta-info">
-                  <h5>{item.author}</h5>
-                  <span>{item.role}, {item.company}</span>
-                </div>
-              </div>
+        <div style={{ position: "relative", maxWidth: "860px", margin: "40px auto 0 auto" }}>
+          <div className="orgo-quote-box">
+            <div className="orgo-quote-icon">
+              <Quote size={24} />
             </div>
-          ))}
+            <p className="orgo-quote-text">“{current.quote}”</p>
+            <div className="orgo-quote-author">
+              <h5>{current.author}</h5>
+              <span>
+                {current.role}, {current.company}
+              </span>
+            </div>
+          </div>
+
+          {/* Carousel Arrows */}
+          <button
+            onClick={prevSlide}
+            aria-label="Previous review"
+            style={{
+              position: "absolute",
+              left: "-20px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "44px",
+              height: "44px",
+              borderRadius: "50%",
+              background: "#ffffff",
+              border: "1px solid var(--border-color)",
+              boxShadow: "var(--shadow-md)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              color: "var(--text-dark)",
+              zIndex: 10,
+            }}
+          >
+            <ChevronLeft size={22} />
+          </button>
+          <button
+            onClick={nextSlide}
+            aria-label="Next review"
+            style={{
+              position: "absolute",
+              right: "-20px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "44px",
+              height: "44px",
+              borderRadius: "50%",
+              background: "#ffffff",
+              border: "1px solid var(--border-color)",
+              boxShadow: "var(--shadow-md)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              color: "var(--text-dark)",
+              zIndex: 10,
+            }}
+          >
+            <ChevronRight size={22} />
+          </button>
+
+          {/* Indicators */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "8px",
+              marginTop: "24px",
+            }}
+          >
+            {testimonialsData.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIdx(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                style={{
+                  width: currentIdx === i ? "28px" : "10px",
+                  height: "10px",
+                  borderRadius: "9999px",
+                  backgroundColor:
+                    currentIdx === i ? "var(--orgo-blue)" : "#cbd5e1",
+                  transition: "all 0.3s ease",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
