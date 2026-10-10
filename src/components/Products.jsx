@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-export default function Products() {
+export default function Products({ onNavigateToShop }) {
   const cards = [
     {
       title: "TallyPrime 5.1 & Cloud ERP",
@@ -77,6 +77,29 @@ export default function Products() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA to Full Shop / Products Catalog */}
+        <div style={{ textAlign: "center", marginTop: "36px" }}>
+          <button
+            type="button"
+            onClick={onNavigateToShop || (() => { window.location.hash = "#shop-page"; })}
+            className="orgo-btn-primary"
+            style={{
+              padding: "12px 28px",
+              borderRadius: "8px",
+              fontSize: "14px",
+              fontWeight: 700,
+              cursor: "pointer",
+              border: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <span>Browse Full Product Store & Pricing</span>
+            <ArrowRight size={16} />
+          </button>
         </div>
       </div>
     </section>

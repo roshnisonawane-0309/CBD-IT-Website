@@ -278,39 +278,134 @@ button {
   background: var(--orgo-blue-hover);
 }
 
-.orgo-nav-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  list-style: none;
-}
-
-.orgo-nav-link {
+/* ========================================================
+   CBD IT SOLUTIONS - Authentic Navbar & Dropdowns
+   ======================================================== */
+.cbd-nav-link {
   font-size: 14.5px;
-  font-weight: 500;
-  color: var(--text-dark);
-  padding: 8px 4px;
-  transition: var(--transition);
-  position: relative;
-}
-
-.orgo-nav-link:hover,
-.orgo-nav-link.active {
-  color: var(--orgo-blue);
   font-weight: 600;
-}
-
-.orgo-navbar-actions {
-  display: flex;
+  color: #172541;
+  text-decoration: none;
+  padding: 8px 6px;
+  transition: color 0.2s ease;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.mobile-toggle-btn {
-  display: none;
-  color: var(--text-dark);
-  padding: 6px;
+.cbd-nav-link:hover,
+.cbd-nav-link.active {
+  color: #0f5999;
+}
+
+.cbd-dropdown-btn {
+  gap: 3px;
+}
+
+.cbd-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  padding: 8px 0;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  animation: cbdFadeIn 0.18s ease-out forwards;
+}
+
+/* Invisible hover bridge to eliminate hover loss gap */
+.cbd-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: transparent;
+}
+
+@keyframes cbdFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cbd-dropdown-item {
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  display: block;
+}
+
+.cbd-dropdown-item:hover {
+  background-color: #f1f5f9;
+  color: #0f5999;
+  padding-left: 22px;
+}
+
+.cbd-mobile-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: #172541;
+  text-decoration: none;
+  padding: 8px 0;
+  display: block;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cbd-mobile-sublink {
+  font-size: 14px;
+  color: #475569;
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+.cbd-btn-enquiry:hover {
+  background-color: #0a406e !important;
+}
+
+.cbd-btn-support:hover {
+  background-color: #242b33 !important;
+}
+
+@media (max-width: 1120px) {
+  .cbd-nav-menu {
+    gap: 12px !important;
+  }
+  .cbd-nav-link {
+    font-size: 13.5px !important;
+    padding: 6px 3px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .cbd-top-bar {
+    display: none !important;
+  }
+  .cbd-nav-menu,
+  .cbd-navbar-actions .cbd-btn-enquiry,
+  .cbd-navbar-actions .cbd-btn-support {
+    display: none !important;
+  }
+  .cbd-mobile-toggle {
+    display: block !important;
+  }
 }
 
 /* ========================================================
