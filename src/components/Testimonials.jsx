@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, ExternalLink, ArrowRight } from "lucide-react";
 import { testimonialsData } from "../data/content";
 
-export default function Testimonials() {
+export default function Testimonials({ onNavigateToPage }) {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   useEffect(() => {
@@ -124,6 +124,51 @@ export default function Testimonials() {
                 }}
               />
             ))}
+          </div>
+
+          {/* View All Testimonials Link & Dedicated Page */}
+          <div style={{ textAlign: "center", marginTop: "32px", display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>
+            <button
+              type="button"
+              onClick={onNavigateToPage || (() => { window.location.hash = "#testimonials-page"; })}
+              className="orgo-btn-primary"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                fontWeight: 600,
+                fontSize: "14px",
+                padding: "12px 24px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                border: "none",
+              }}
+            >
+              <span>Explore All Testimonials Page</span>
+              <ArrowRight size={16} />
+            </button>
+            <a
+              href="https://cbditsolutions.com/testimonials/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                fontWeight: 600,
+                fontSize: "13.5px",
+                padding: "12px 20px",
+                borderRadius: "8px",
+                border: "1px solid #cbd5e1",
+                backgroundColor: "#ffffff",
+                color: "#172541",
+                textDecoration: "none",
+                transition: "all 0.2s ease",
+              }}
+            >
+              <span>Visit Official Portal</span>
+              <ExternalLink size={14} />
+            </a>
           </div>
         </div>
       </div>

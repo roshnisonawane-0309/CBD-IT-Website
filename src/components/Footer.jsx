@@ -2,7 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import { companyData, productsData } from "../data/content";
 
-export default function Footer() {
+export default function Footer({ onOpenSupportModal, onNavigateToTestimonials, onNavigateToShop }) {
   return (
     <footer className="orgo-footer" id="footer">
       <div className="container">
@@ -92,14 +92,46 @@ export default function Footer() {
               <li><a href="#who-we-are">About</a></li>
               <li><a href="#journey">Products & Solutions</a></li>
               <li><a href="#driving-success">Driving Innovation</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={onNavigateToTestimonials || (() => { window.location.hash = "#testimonials-page"; })}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    font: "inherit",
+                    color: "inherit",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    transition: "color 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--orgo-blue)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "inherit")}
+                >
+                  Testimonials
+                </button>
+              </li>
               <li><a href="#locations">Office Branches</a></li>
               <li><a href="#support">Helpdesk & Support</a></li>
               <li><a href="#contact">Contact Us</a></li>
               <li>
-                <a href={companyData.externalLinks.shop} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: "var(--orgo-blue)" }}>
-                  Online Store <ExternalLink size={12} style={{ display: "inline", verticalAlign: "middle" }} />
-                </a>
+                <button
+                  type="button"
+                  onClick={onNavigateToShop || (() => { window.location.hash = "#shop-page"; })}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    font: "inherit",
+                    fontWeight: 600,
+                    color: "var(--orgo-blue)",
+                    cursor: "pointer",
+                    textAlign: "left",
+                  }}
+                >
+                  Software Store & Licenses →
+                </button>
               </li>
             </ul>
           </div>
